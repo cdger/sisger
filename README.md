@@ -14,18 +14,27 @@ Para mais informações sobre como fazer a Fork de um repositório, verifique o 
 ======
 Para manter sua fork sincronizada:
 ======
+
 Quando você cria uma fork para propor mudanças em um projeto principal, é uma boa prática sincronizar regularmente sua fork com o repositório principal. Para fazer isso, você precisa usar o comando GIT. 
 
+
+======
 Passo 1. Configurar o Git
+======
+
 
   Se você não condigurou ainda, você precisa primeiramente realizar essa configução. Para instalar o git no Ubuntu use o comando "sudo apt-get install git"  
-# git config --global usar.name "SEU-NOME-DE-USUARIO"
-# git config --global usar.email "SEU-EMAIL NO GIT"
-# git config --global credential.helper cache
-# git config --global credential.helper cache 'cache --timeout=3600'
+  
+  #git config --global usar.name "SEU-NOME-DE-USUARIO"
+  #git config --global usar.email "SEU-EMAIL NO GIT"
+  #git config --global credential.helper cache
+  #git config --global credential.helper cache 'cache --timeout=3600'
 (para mais informações acessar https://help.github.com/articles/set-up-git/)
 
+
+=
 Passo 2. Crie um clone local da sua fork
+=
 
   Criada a fork do projeto sisger para seu usuário do github, não será imediatamente possível editar o código da via Eclipse (ou outra IDE de desenvolvimento). Para isso você precisa criar um clone do projeto em sua máquina local. Vamos criar esse clone nos passos abaixo. 
   
@@ -50,8 +59,9 @@ Passo 2. Crie um clone local da sua fork
 
 Agora você tem uma cópia local da sua fork do sisger no repositório!
 
-
+=
 Passo 3: Configure o Git para sincronizar sua fork com o repositório original do Sisger
+=
 
 Quando você fizer uma fork em um projeto para propor mudanças ao repositório original, você pode configurar o Git para recuperar mudanças do projeto original em seu clone local da fork. 
 
@@ -76,5 +86,4 @@ Quando você fizer uma fork em um projeto para propor mudanças ao repositório 
     Para verificar o novo repositório upstream que você especificou para a sua fork, digite git remote -v novamente. Você deve ver a URL para sua fork como origin e a URL para o repositório original como upstream
     
     Agora, você pode manter sua fork sincronizada com o repositório upstream com apenas poucos comandos Git. Para mais informações, veja "Syncing a fork" no help do Git. 
-    
-    
+  
