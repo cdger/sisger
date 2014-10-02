@@ -54,11 +54,11 @@ Passo 2. Crie um clone local da sua fork
 
     git clone https://github.com/SEU-NOME-DE-USUÁRIO/sisger.git
   
-  # Cloning into 'sisger'...
-  #remote: Counting objects: 9, done.
-  #remote: Compressing objects: 100% (4/4), done.
-  #Unpacking objects: 100% (9/9), done.
-  #remote: Total 9 (delta 1), reused 9 (delta 1)
+    # Cloning into 'sisger'...
+    #remote: Counting objects: 9, done.
+    #remote: Compressing objects: 100% (4/4), done.
+    #Unpacking objects: 100% (9/9), done.
+    #remote: Total 9 (delta 1), reused 9 (delta 1)
 
 Agora você tem uma cópia local da sua fork do sisger no repositório!
 
