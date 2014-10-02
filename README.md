@@ -23,13 +23,18 @@ Passo 1. Configurar o Git
 ======
 
 
-  Se você não condigurou ainda, você precisa primeiramente realizar essa configução. Para instalar o git no Ubuntu use o comando "sudo apt-get install git"  
+  Se você não condigurou ainda, você precisa primeiramente realizar essa configução. 
+  Para instalar o git no Ubuntu use:
+    sudo apt-get install git
   
-  #git config --global usar.name "SEU-NOME-DE-USUARIO"
-  #git config --global usar.email "SEU-EMAIL NO GIT"
-  #git config --global credential.helper cache
-  #git config --global credential.helper cache 'cache --timeout=3600'
-(para mais informações acessar https://help.github.com/articles/set-up-git/)
+  Para configurar:
+  
+  
+    git config --global usar.name "SEU-NOME-DE-USUARIO"
+    git config --global usar.email "SEU-EMAIL NO GIT"
+    git config --global credential.helper cache
+    git config --global credential.helper cache 'cache --timeout=3600'
+  (para mais informações acesse https://help.github.com/articles/set-up-git/)
 
 
 =
@@ -43,11 +48,12 @@ Passo 2. Crie um clone local da sua fork
 
   Digite git clone e então cole a URL que você copiou no passo 2. O comando parecerá como o comando abaixo, com o seu      GitHub username no lugar do SEU-NOME-DE-USUÁRIO:
 
-  git clone https://github.com/SEU-NOME-DE-USUÁRIO/sisger.git
+    git clone https://github.com/SEU-NOME-DE-USUÁRIO/sisger.git
   
   Aperte Enter. Seu clone local do repositório será criado. 
 
-  git clone https://github.com/SEU-NOME-DE-USUÁRIO/sisger.git
+    git clone https://github.com/SEU-NOME-DE-USUÁRIO/sisger.git
+  
   # Cloning into 'sisger'...
   #remote: Counting objects: 9, done.
   #remote: Compressing objects: 100% (4/4), done.
@@ -66,6 +72,7 @@ Passo 3: Configure o Git para sincronizar sua fork com o repositório original d
   Copie a Clone URL (na barra a direita) da página do resposiorio.
   Abra um terminal.
   Mude os diretórios para a localização da fork que você clonou no PASSO 2.
+    
     Para ir para seu diretório home, digite apenas cd sem nenhum outro texto.
     Para listar os arquivos e páginas no seu diretório corrente, digite ls
     Para entrar nos subdiretórios, digite cd seu_diretorio.
@@ -73,14 +80,17 @@ Passo 3: Configure o Git para sincronizar sua fork com o repositório original d
         
   Digite git remove -v e aperte Enter. Você verá o diretório remoto atual do repositório para a sua fork.
     
-  #origin	https://github.com/SEU-NOME-DE-USUÁRIO/sisger.git (fetch)
-  #origin	https://github.com/SEU-NOME-DE-USUÁRIO/sisger.git (push)
+    #origin	https://github.com/SEU-NOME-DE-USUÁRIO/sisger.git (fetch)
+    #origin	https://github.com/SEU-NOME-DE-USUÁRIO/sisger.git (push)
 
-  Digit git remote add upstream, e então cole a URL que você copiou no passo 2 e aperte Enter. O comando parecerá com:
+  Digite "git remote add upstream", e então cole a URL que você copiou no passo 2 e aperte Enter. 
+  O comando parecerá com:
 
     git remote add upstream https://github.com/cdger/sisger.git
 
-  Para verificar o novo repositório upstream que você especificou para a sua fork, digite git remote -v novamente. Você deve ver a URL para sua fork como origin e a URL para o repositório original como upstream
+  Para verificar o novo repositório upstream que você especificou para a sua fork, digite:
+  
+    git remote -v 
     
-  Agora, você pode manter sua fork sincronizada com o repositório upstream com apenas poucos comandos Git. Para mais informações, veja "Syncing a fork" no help do Git. 
+  Você deve ver a URL para sua fork como origin e a URL para o repositório original como upstream. Agora, você pode manter sua fork sincronizada com o repositório upstream com apenas poucos comandos Git. Para mais informações, veja "Syncing a fork" no help do Git. 
   
