@@ -60,13 +60,26 @@ Passo 3. Configurando o git para sincronizar sua ramificação com o repositóri
   Pronto! Agora você pode usar comandos gits para sincronizar sua ramificação e clone local ao repositório principal!
   
 =
-Comandos úteis
+Trabalhando de forma sincronizada com o repositório central
 =
 
-  Atualizar sua ramificação em relação ao repositório principal e, ao mesmo tempo, trazer os dados atualizados para o seu clone local:
+  Para sincronizar o master local, deixando exatamente igual ao master upstream: 
+
+    $ git checkout master
+    $ git fetch upstream
+    $ git rebase upstream/master  
+ 
+ Depois de modificar os arquivos, fazer os commits com as descrições das mudanças, deve-se enviar o trabalho para o servidor. O comando "git push" empurra as suas modificações para o servidor, incluido-as no histórico do projeto. Quando os outros integrantes da equipe fizerem um git pull, essas modificações serão baixadas e incluídas no repositório local da pessoa. É possível efetuar um push no master do seu usuário e no upstream (repositório central). Mas esta não é uma boa prática porque o upstream (repositório central) é um ponto de início para qualquer nova feature. Assim, ao concluir um conjunto de implementações estáveis, recomenda-se:
+ 
+  1. Executar o comando git push
+  2. Do próprio github, fazer um Pull Request dos commits no master do usuário ao master do upstream. 
   
-    git pull 
-    
+  Assim o master nunca recebe diretamente os commits, ficilitando a sincronização. Quando os commits da ramificação forem aceitos no upstream/master, eles chegam no master local na próxima sincronização. 
+  
+=
+Commit
+=
+
 Avisar ao git quais arquivos devem ser considerados no próximo commit:
   
     git add <arquivo>
@@ -75,11 +88,3 @@ Avisar ao git quais arquivos devem ser considerados no próximo commit:
   Efetuar commit:
   
     git commit -m "comentários da alteração"
-    
-  Enviar arquivos do clone local para sua ramificação:
-  
-    git push origin master
-    
-    
-  
-
