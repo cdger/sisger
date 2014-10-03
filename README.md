@@ -9,3 +9,6 @@ Para fazer uma cópia do projeto, clique em FORK.
 Após criar a fork deste repositório, você pode fazer mudanças no projeto e submeter um Pull Request.
 
 Para mais informações sobre como fazer a Fork de um repositório, verifique o guida de ajuda do GitHub no ítem "Forking Projects".  Obrigado! (ass. Wellington)
+
+
+pool request
