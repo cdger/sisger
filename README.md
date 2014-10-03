@@ -94,3 +94,4 @@ Passo 3: Configure o Git para sincronizar sua fork com o repositório original d
     
   Você deve ver a URL para sua fork como origin e a URL para o repositório original como upstream. Agora, você pode manter sua fork sincronizada com o repositório upstream com apenas poucos comandos Git. Para mais informações, veja "Syncing a fork" no help do Git. 
   
+teste
