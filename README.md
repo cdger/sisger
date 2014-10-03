@@ -1,17 +1,29 @@
 SISGER -Coleta e Publicação de Relatórios Gerenciais do Centro de Dados
 ======
-Criando uma ramificação
+
+  Bem vindo ao repositório principal do SISGER. 
+  
+  Para melhor entender o controle de versão por meio da ferramenta GIT: 
+  
+    http://git-scm.com/book/pt-br/Primeiros-passos-No%C3%A7%C3%B5es-B%C3%A1sicas-de-Git
+    http://git-scm.com/book/pt-br/Git-Essencial
+    http://git-scm.com/book/pt-br/Ramifica%C3%A7%C3%A3o-Branching-no-Git
+    
+=
+  Como desenvolver com equipes geograficamente dispersas de forma organizada?   
+=
+
+ 1. Para implementar novas funcionalidades ao projeto principal, crie uma ramificação do projeto cada vez que iniciar o desenvolvimento de uma nova feature (um novo relatório). A ramificação é criada pela interface web do github. Para criá-la você utiliza o botão "Fork" na página do projeto principal (https://github.com/cdger/sisger). Para usar o Eclipse para desenvolver, crie um clone da ramificação em sua máquina local. O comando será parecido com o abaixo.
+ 
+ git clone https://github.com/SEU-NOME-DE-USUÁRIO/sisger.git
+
+2. Ao concluir implementações, você criará um "Pull Request". Mantenha sempre sua ramificação sincronizada com a última versão do projeto principal. Caso contrário seu Pull Request não poderá ser efetuado (será necessário tratar conflitos de implementação). A aprovação do Pull Request significa que a implementação foi absorvida no projeto principal. 
+
+  Obs: O comando "git push" salva modificações na sua ramificação. Embora seja possível efetuar o push diretamente no repositório central, isso não é uma boa prática porque o repositório central é um ponto de início para qualquer nova feature. Quando o repositório central não recebe diretamente os commits, a sincronização dos trabalhos entre os integrantes da equipe fica mais rápida. 
+  
 ======
-Para propor novas funcionalidades ao projeto principal (https://github.com/cdger/sisger.git), você deve criar uma ramificação do projeto (git clone https://github.com/SEU-NOME-DE-USUÁRIO/sisger.git). Nesta ramificação você poderá efetuar quaisquer modificações sem criar instabilidade no projeto principal. Em um segundo momento, quando a proposta de funcionalidade estiver madura e  estável, a funcionalidade deverá ser mesclada ao projeto principal. 
-
-Para criar uma ramificação, acesse a página princiapal do projeto (https://github.com/cdger/sisger) e clique no botão FORK. Uma ramificação (Fork) atua como uma ponte entre o proejto original no repositório e sua cópia pessoal. 
-
-
+Preparação para usar o git
 ======
-Para manter sua ramificação sincronizada com o repositório principal:
-======
-
-Quando você cria uma ramificação, é uma boa prática sincronizá-la regularmente com repositório principal. Essa sincronização é feito por comandos "git". Antes de atuar no dia a dia do desenvolvimento com comandos git, algumas cofigurações precisar ser feitas.
 
   1. Instalação do Git: Se você não tem o git instalado, você pode usar (no Ubuntu) o comando abaixo
 
@@ -29,71 +41,36 @@ Quando você cria uma ramificação, é uma boa prática sincronizá-la regularm
 
 
 ======
-Passo 2. Trabalhando com sua ramificação
+Comandos úteis
 ======
 
-  Você pode editar arquivos online (diretamente na URL de endereço de sua ramificação). Porém, provavelmente você quererá utilizar o Eclipse (ou outro IDE de sua preferência) para efetuar os trabalhos de desenvolvimento. Nesse caso, você precisará criar uma cópia local (na sua estação de desenvolvimento) dos arquivos de sua ramificação. Para isso, para fazer o download, use o comando abaixo.
+  Criar clone local de ramificação:
   
-  git clone https://github.com/SEU-NOME-DE-USUÁRIO/sisger.git
+      git clone https://github.com/SEU-NOME-DE-USUÁRIO/sisger.git
+      (obs: quando você cria um clone de uma ramificação, o repositório é batizado pelo nome Origin)
+      (por padrão, o repositório origin vem com uma branch criada, de nome "master")
+  
 
-Pronto, agora você tem uma cópia local da sua ramificação para usar com o Eclipse!
-  
 
-=
-Passo 3. Configurando o git para sincronizar sua ramificação com o repositório principal
-=
+  Adicionar repositórios remotos na máquina local:
+  
+      git remote add NOME-PARA-O-REPOSITORIO-REMOTO https://github.com/cdger/sisger.git  
 
-  Você pode configurar o git para recuperar mudanças do projeto original no clone local de sua ramificação.
   
-  Para isso, em um terminal de comandos, entre no diretório do clone local da sua ramificação (criado no passo anterior) e use o comando abaixo.
+  Para ver os repositórios remotos configurados no seu projeto:
   
-    git remote add upstream https://github.com/cdger/sisger.git
+      git remote -v
+      
+  Para sincronizar a master local com a master do repositório central
   
-  Note que ao digitar o comando "git remote -v" no diretório do clone local da sua ramificação, a saída deve ser parecida com a abaixo.
+      git checkout master; git fetch NOME-DADO-AO-REPOSITORIO-CENTRAL;git rebase NOME-DADO-AO-REPOSITORIO-CENTRAL/master
+      
+  Para consolidar implementações (fazer commit)
   
+      git add <arquivo>
+      git add *  (caso todos os arquivos devam ser considerados)
   
-    #origin	https://github.com/SEU-NOME-DE-USUÁRIO/sisger.git (fetch)
-    #origin	https://github.com/SEU-NOME-DE-USUÁRIO/sisger.git (push)
-    #upstream	https://github.com/cdger/sisger.git (fetch)
-    #upstream	https://github.com/cdger/sisger.git (push)
-
-  Pronto! Agora você pode usar comandos gits para sincronizar sua ramificação e clone local ao repositório principal!
-  
-=
-Trabalhando de forma sincronizada com o repositório central
-=
-
-  Para sincronizar o master local, deixando exatamente igual ao master upstream: 
-
-    $ git checkout master
-    $ git fetch upstream
-    $ git rebase upstream/master  
- 
- Depois de modificar os arquivos, fazer os commits com as descrições das mudanças, deve-se enviar o trabalho para o servidor. O comando "git push" empurra as suas modificações para o servidor, incluido-as no histórico do projeto. Quando os outros integrantes da equipe fizerem um git pull, essas modificações serão baixadas e incluídas no repositório local da pessoa. É possível efetuar um push no master do seu usuário e no upstream (repositório central). Mas esta não é uma boa prática porque o upstream (repositório central) é um ponto de início para qualquer nova feature. Assim, ao concluir um conjunto de implementações estáveis, recomenda-se:
- 
-  1. Executar o comando git push
-  2. Do próprio github, fazer um Pull Request dos commits no master do usuário ao master do upstream. 
-  
-  Assim o master nunca recebe diretamente os commits, ficilitando a sincronização. Quando os commits da ramificação forem aceitos no upstream/master, eles chegam no master local na próxima sincronização. 
-  
-=
-Commit
-=
-
-Avisar ao git quais arquivos devem ser considerados no próximo commit:
-  
-    git add <arquivo>
-    git add *  (caso todos os arquivos devam ser considerados)
+      git commit -m "comentários da alteração"
     
-  Efetuar commit:
-  
-    git commit -m "comentários da alteração"
-    
-=
-Mais informações
 
-    http://git-scm.com/book/pt-br/Primeiros-passos-No%C3%A7%C3%B5es-B%C3%A1sicas-de-Git
 
-    http://git-scm.com/book/pt-br/Git-Essencial
-=
-    http://git-scm.com/book/pt-br/Ramifica%C3%A7%C3%A3o-Branching-no-Git
