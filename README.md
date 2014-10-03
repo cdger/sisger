@@ -92,6 +92,8 @@ Avisar ao git quais arquivos devem ser considerados no próximo commit:
 =
 Mais informações
 
+    http://git-scm.com/book/pt-br/Primeiros-passos-No%C3%A7%C3%B5es-B%C3%A1sicas-de-Git
+
     http://git-scm.com/book/pt-br/Git-Essencial
 =
     http://git-scm.com/book/pt-br/Ramifica%C3%A7%C3%A3o-Branching-no-Git
