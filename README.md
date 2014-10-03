@@ -5,9 +5,11 @@ Bem vindo ao repositório principal do SISGER.
   
 Para melhor entender o controle de versão por meio da ferramenta GIT: 
   
-  http://git-scm.com/book/pt-br/Primeiros-passos-No%C3%A7%C3%B5es-B%C3%A1sicas-de-Git
-  http://git-scm.com/book/pt-br/Git-Essencial
-  http://git-scm.com/book/pt-br/Ramifica%C3%A7%C3%A3o-Branching-no-Git
+    http://git-scm.com/book/pt-br/Primeiros-passos-No%C3%A7%C3%B5es-B%C3%A1sicas-de-Git
+  
+    http://git-scm.com/book/pt-br/Git-Essencial
+  
+    http://git-scm.com/book/pt-br/Ramifica%C3%A7%C3%A3o-Branching-no-Git
     
 =
   Como desenvolver com equipes geograficamente dispersas de forma organizada?   
@@ -19,11 +21,12 @@ Para implementar novas funcionalidades ao projeto principal, crie uma ramificaç
 
 Ao concluir implementações, você criará um "Pull Request". Mantenha sempre sua ramificação sincronizada com a última versão do projeto principal. Caso contrário seu Pull Request não poderá ser efetuado (será necessário tratar conflitos de implementação). A aprovação do Pull Request significa que a implementação foi absorvida no projeto principal. 
 
-  Obs: O comando "git push" salva modificações na sua ramificação. Embora seja 
-  possível efetuar o push diretamente no repositório central, isso não é uma boa 
-  prática porque o repositório central é um ponto de início para qualquer nova 
-  feature. Quando o repositório central não recebe diretamente os commits, 
-  a sincronização dos trabalhos entre os integrantes da equipe fica mais rápida. 
+    Obs: O comando "git commit" consolida implementações para a realização do 
+    "git push". Ocomando "git push" transfere essas modificações para a a 
+    ramificação que você criou para implementar a nova funcionalidade. Embora 
+    seja possível efetuar o push diretamente no repositório central, esso não 
+    é uma boa prática porque o repositório central deve ser um ponto de início
+    para a implementação de qualquer nova feature. 
   
 ======
 Preparação para usar o git
@@ -51,8 +54,12 @@ Comandos úteis
 Criar clone local de ramificação:
   
       git clone ENDEREÇO-DA-RAMIFICAÇÂO
-      (obs: quando você cria um clone de uma ramificação, o repositório é batizado pelo nome Origin)
-      (por padrão, o repositório origin vem com uma branch criada, de nome "master")
+      
+      (obs: quando você cria um clone de uma ramificação, 
+      o repositório é batizado pelo nome Origin)
+      
+      (por padrão, o repositório origin vem com uma branch 
+      criada, de nome "master")
   
 Adicionar repositórios remotos na máquina local:
   
