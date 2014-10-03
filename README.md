@@ -88,3 +88,8 @@ Avisar ao git quais arquivos devem ser considerados no próximo commit:
   Efetuar commit:
   
     git commit -m "comentários da alteração"
+    
+=
+Mais informações
+=
+    http://git-scm.com/book/pt-br/Ramifica%C3%A7%C3%A3o-Branching-no-Git
