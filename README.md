@@ -1,97 +1,79 @@
-SISGER
+SISGER -Coleta e Publicação de Relatórios Gerenciais do Centro de Dados
 ======
-Sistema de Gestão de Recursos e Serviços de Centro de Dados
+Criando uma ramificação
 ======
-Para fazer uma cópia do projeto, clique em FORK.
+Para propor novas funcionalidades ao projeto principal (https://github.com/cdger/sisger.git), você deve criar uma ramificação do projeto (git clone https://github.com/SEU-NOME-DE-USUÁRIO/sisger.git). Nesta ramificação você poderá efetuar quaisquer modificações sem criar instabilidade no projeto principal. Em um segundo momento, quando a proposta de funcionalidade estiver madura e  estável, a funcionalidade deverá ser mesclada ao projeto principal. 
 
-É nessa cópia que você codificará as propostas de melhoria. Uma Fork atua como uma ponte entre o proejto original no repositório e sua cópia pessoal. Você pode submeter "Pull Requests" para contribuir com projetos no qual você criou uma fork. Nesses "Pull Requests" serão oferecidas as mudanças que você efetuou no projeto original. Criação de Forks estão no coração da prática de programação em sociedade no GitHub.
-
-Após criar a fork deste repositório, você pode fazer mudanças no projeto e submeter um Pull Request.
-
-Para mais informações sobre como fazer a Fork de um repositório, verifique o guida de ajuda do GitHub no ítem "Forking Projects".  Obrigado! (ass. Wellington)
+Para criar uma ramificação, acesse a página princiapal do projeto (https://github.com/cdger/sisger) e clique no botão FORK. Uma ramificação (Fork) atua como uma ponte entre o proejto original no repositório e sua cópia pessoal. 
 
 
 ======
-Para manter sua fork sincronizada:
+Para manter sua ramificação sincronizada com o repositório principal:
 ======
 
-Quando você cria uma fork para propor mudanças em um projeto principal, é uma boa prática sincronizar regularmente sua fork com o repositório principal. Para fazer isso, você precisa usar o comando GIT. 
+Quando você cria uma ramificação, é uma boa prática sincronizá-la regularmente com repositório principal. Essa sincronização é feito por comandos "git". Antes de atuar no dia a dia do desenvolvimento com comandos git, algumas cofigurações precisar ser feitas.
 
-
-======
-Passo 1. Configurar o Git
-======
-
-
-  Se você não condigurou ainda, você precisa primeiramente realizar essa configução. 
-  Para instalar o git no Ubuntu use:
+  1. Instalação do Git: Se você não tem o git instalado, você pode usar (no Ubuntu) o comando abaixo
     sudo apt-get install git
-  
-  Para configurar:
-  
-  
-    git config --global usar.name "SEU-NOME-DE-USUARIO"
-    git config --global usar.email "SEU-EMAIL NO GIT"
+  2. Informe para o git seu nome de usuário, e-mail e tempo de timeout nas sincronizações
+    git config --global user.name "SEU-NOME-DE-USUARIO"
+    git config --global user.email "SEU-EMAIL NO GIT"
     git config --global credential.helper cache
     git config --global credential.helper cache 'cache --timeout=3600'
-  (para mais informações acesse https://help.github.com/articles/set-up-git/)
+    (para mais informações acesse  https://help.github.com/articles/set-up-git/)
+
+  Pronto, você está pronto para trabalhar com o git!
 
 
-=
-Passo 2. Crie um clone local da sua fork
-=
+======
+Passo 2. Trabalhando com sua ramificação
+======
 
-  Criada a fork do projeto sisger para seu usuário do github, não será imediatamente possível editar o código da via Eclipse (ou outra IDE de desenvolvimento). Para isso você precisa criar um clone do projeto em sua máquina local. Vamos criar esse clone nos passos abaixo. 
+  Você pode editar arquivos online (diretamente na URL de endereço de sua ramificação). Porém, provavelmente você quererá utilizar o Eclipse (ou outro IDE de sua preferência) para efetuar os trabalhos de desenvolvimento. Nesse caso, você precisará criar uma cópia local (na sua estação de desenvolvimento) dos arquivos de sua ramificação. Para isso, para fazer o download, use o comando abaixo.
   
-  No GitHub, navegue até sua fork do repositório do Sisger. 
-  Copie a URL apresentada no campo HTTPS Clone URL  que fica no menu a direita da página de sua fork do repositório.       Dependendo de como você se autenticou no github, a url será HTTPS ou SSH. Abra um terminal para executar o seguinte      procedimento: 
+  git clone https://github.com/SEU-NOME-DE-USUÁRIO/sisger.git
 
-  Digite git clone e então cole a URL que você copiou no passo 2. O comando parecerá como o comando abaixo, com o seu      GitHub username no lugar do SEU-NOME-DE-USUÁRIO:
-
-    git clone https://github.com/SEU-NOME-DE-USUÁRIO/sisger.git
+Pronto, agora você tem uma cópia local da sua ramificação para usar com o Eclipse!
   
-  Aperte Enter. Seu clone local do repositório será criado. 
-
-    git clone https://github.com/SEU-NOME-DE-USUÁRIO/sisger.git
-  
-    # Cloning into 'sisger'...
-    #remote: Counting objects: 9, done.
-    #remote: Compressing objects: 100% (4/4), done.
-    #Unpacking objects: 100% (9/9), done.
-    #remote: Total 9 (delta 1), reused 9 (delta 1)
-
-Agora você tem uma cópia local da sua fork do sisger no repositório!
 
 =
-Passo 3: Configure o Git para sincronizar sua fork com o repositório original do Sisger
+Passo 3. Configurando o git para sincronizar sua ramificação com o repositório principal
 =
 
-  Quando você fizer uma fork em um projeto para propor mudanças ao repositório original, você pode configurar o Git para   recuperar mudanças do projeto original em seu clone local da fork. 
-
-  No GitHub, navegue até o repositório do Sisger.
-  Copie a Clone URL (na barra a direita) da página do resposiorio.
-  Abra um terminal.
-  Mude os diretórios para a localização da fork que você clonou no PASSO 2.
-    
-    Para ir para seu diretório home, digite apenas cd sem nenhum outro texto.
-    Para listar os arquivos e páginas no seu diretório corrente, digite ls
-    Para entrar nos subdiretórios, digite cd seu_diretorio.
-    Para ir um diretório acima, digite cd ...
-        
-  Digite git remove -v e aperte Enter. Você verá o diretório remoto atual do repositório para a sua fork.
-    
+  Você pode configurar o git para recuperar mudanças do projeto original no clone local de sua ramificação.
+  
+  Para isso, em um terminal de comandos, entre no diretório do clone local da sua ramificação (criado no passo anterior) e use o comando abaixo.
+  
+    git remote add upstream https://github.com/cdger/sisger.git
+  
+  Note que ao digitar o comando "git remote -v" no diretório do clone local da sua ramificação, a saída deve ser parecida com a abaixo.
+  
+  
     #origin	https://github.com/SEU-NOME-DE-USUÁRIO/sisger.git (fetch)
     #origin	https://github.com/SEU-NOME-DE-USUÁRIO/sisger.git (push)
+    #upstream	https://github.com/cdger/sisger.git (fetch)
+    #upstream	https://github.com/cdger/sisger.git (push)
 
-  Digite "git remote add upstream", e então cole a URL que você copiou no passo 2 e aperte Enter. 
-  O comando parecerá com:
-
-    git remote add upstream https://github.com/cdger/sisger.git
-
-  Para verificar o novo repositório upstream que você especificou para a sua fork, digite:
+  Pronto! Agora você pode usar comandos gits para sincronizar sua ramificação e clone local ao repositório principal!
   
-    git remote -v 
+=
+Comandos úteis
+=
+
+  Avisar ao git quais arquivos devem ser considerados no próximo commit:
+  
+    git add <arquivo>
+    git add *  (caso todos os arquivos devam ser considerados)
     
-  Você deve ver a URL para sua fork como origin e a URL para o repositório original como upstream. Agora, você pode manter sua fork sincronizada com o repositório upstream com apenas poucos comandos Git. Para mais informações, veja "Syncing a fork" no help do Git. 
+  Efetuar commit:
+    git commit -m "comentários da alteração"
+    
+  Enviar arquivos da sua ramificação para o repositório principal:
+    git push origin master
+    
+  
+  
+  
+  
   
 
