@@ -63,7 +63,11 @@ Passo 3. Configurando o git para sincronizar sua ramificação com o repositóri
 Comandos úteis
 =
 
-  Avisar ao git quais arquivos devem ser considerados no próximo commit:
+  Atualizar sua ramificação em relação ao repositório principal e, ao mesmo tempo, trazer os dados atualizados para o seu clone local:
+  
+    git pull 
+    
+Avisar ao git quais arquivos devem ser considerados no próximo commit:
   
     git add <arquivo>
     git add *  (caso todos os arquivos devam ser considerados)
@@ -72,13 +76,10 @@ Comandos úteis
   
     git commit -m "comentários da alteração"
     
-  Enviar arquivos da sua ramificação para o repositório principal:
+  Enviar arquivos do clone local para sua ramificação:
   
     git push origin master
     
-  
-  
-  
-  
+    
   
 
