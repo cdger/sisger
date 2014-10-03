@@ -14,8 +14,11 @@ Para manter sua ramificação sincronizada com o repositório principal:
 Quando você cria uma ramificação, é uma boa prática sincronizá-la regularmente com repositório principal. Essa sincronização é feito por comandos "git". Antes de atuar no dia a dia do desenvolvimento com comandos git, algumas cofigurações precisar ser feitas.
 
   1. Instalação do Git: Se você não tem o git instalado, você pode usar (no Ubuntu) o comando abaixo
+
     sudo apt-get install git
+
   2. Informe para o git seu nome de usuário, e-mail e tempo de timeout nas sincronizações
+  
     git config --global user.name "SEU-NOME-DE-USUARIO"
     git config --global user.email "SEU-EMAIL NO GIT"
     git config --global credential.helper cache
@@ -66,9 +69,11 @@ Comandos úteis
     git add *  (caso todos os arquivos devam ser considerados)
     
   Efetuar commit:
+  
     git commit -m "comentários da alteração"
     
   Enviar arquivos da sua ramificação para o repositório principal:
+  
     git push origin master
     
   
